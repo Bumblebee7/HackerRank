@@ -1,4 +1,4 @@
-package stdinAndStdoutII;
+package javaIntroduction.stdinAndStdoutII;
 
 import java.util.Scanner;
 

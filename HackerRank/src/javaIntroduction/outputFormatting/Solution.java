@@ -1,4 +1,4 @@
-package outputFormatting;
+package javaIntroduction.outputFormatting;
 
 import java.util.Scanner;
 
