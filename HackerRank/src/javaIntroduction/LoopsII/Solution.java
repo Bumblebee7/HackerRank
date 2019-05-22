@@ -15,6 +15,7 @@ public class Solution {
 			int n = scan.nextInt();
 			int oldVar = 0;
 			
+			// calculation
 			for(int j=0;j<n;j++) {
 				int newVar = oldVar + (int) (Math.pow(2, j) * b);
 				System.out.print(a + newVar + " ");
