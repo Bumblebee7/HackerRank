@@ -26,16 +26,18 @@ public class Solution {
          * 1 = odd and 0 is even
          */
         if ((N % 2) == 1) {
-        	System.out.print(WEIRD);
+        	System.out.println(WEIRD);
         }
         else {
         	/*
         	 * decide in which range N is
         	 */
         	if (N >= 6 && N <= 20) {
-        		System.out.print(WEIRD);
+        		System.out.println(WEIRD);
         	}
-        	System.out.print(NOT_WEIRED);
+        	else {
+            	System.out.println(NOT_WEIRED);	
+        	}
         }
     }
 }
