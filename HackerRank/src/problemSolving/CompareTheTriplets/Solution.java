@@ -1,17 +1,16 @@
 package problemSolving.CompareTheTriplets;
 
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class Solution {
 
-    // Complete the compareTriplets function below.
-    static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
+    /*
+     * Alternative to suppress the warnings is to box and unbox the values
+     * for example: new Integer(0);
+     */
+    @SuppressWarnings("boxing")
+	static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
     	List<Integer> compPoints = Arrays.asList(0, 0);
     	for(int i = 0; i < a.size(); i++) {
     		if(a.get(i) > b.get(i)) {
