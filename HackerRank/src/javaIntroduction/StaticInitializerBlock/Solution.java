@@ -13,7 +13,7 @@ public class Solution {
 			H = scan.nextInt();
 		}
 		
-		if(B < 0 || H < 0) {
+		if(B <= 0 || H <= 0) {
 			flag = false;
 			/*
 			 * Use the following System.out.println in HackerRank, but the real Exception in the IDE
