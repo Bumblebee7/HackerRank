@@ -1,8 +1,5 @@
 package problemSovling.DiagonalDifference;
 
-import java.io.*;
-import java.util.*;
-
 public class Solution {
 
     // Complete the diagonalDifference function below.
@@ -13,12 +10,10 @@ public class Solution {
     			// example values are 00 11 22 33
     			if(i == j) {
     				sumA += arr[i][j];
-    				System.out.println("sumA: " + sumA);
     			}
     			// example values are 03 12 21 30
     			if(i + j == arr.length - 1) {
     				sumB += arr[i][j];
-    				System.out.println("sumB: " + sumB);
     			}
     		}
     	}
