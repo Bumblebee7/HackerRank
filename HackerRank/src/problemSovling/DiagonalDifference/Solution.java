@@ -22,6 +22,7 @@ public class Solution {
 
 
     public static void main(String[] args) {
+    	// test
     	int[][] resultArr = {
     			{11, 2, 4},
     			{4, 5, 6},
