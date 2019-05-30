@@ -52,18 +52,6 @@ public class Solution {
     	}
     	System.out.println(sumMin + " " + sumMax);
     }
-    
-    
-    /*
-     * quick and dirty helper for debugging
-     */
-    static void printArr(int[] arrToPrint) {
-    	System.out.println("--- NEW PRINT ---");
-    	for(int i = 0; i < arrToPrint.length; i++) {
-    		System.out.print(arrToPrint[i] + " ");
-    	}
-    	System.out.println();
-    }
 
     private static final Scanner scanner = new Scanner(System.in);
 
