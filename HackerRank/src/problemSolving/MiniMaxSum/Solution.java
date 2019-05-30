@@ -6,9 +6,6 @@ public class Solution {
 
     // Complete the miniMaxSum function below.
     static void miniMaxSum(int[] arr) {
-    	/*
-    	 * use a bubblesort to sort the array
-    	 */
     	int temp;
     	/*
     	 * use long because in some cases the
@@ -17,13 +14,25 @@ public class Solution {
     	 * values
     	 */
     	long sumMax = 0, sumMin = 0;
+    	/*
+    	 * use a bubblesort to sort the array
+    	 * use also sorted variable to end sorting
+    	 * if the array is already in ascending
+    	 * order
+    	 */
+    	boolean sorted;
     	for(int i = arr.length; i > 1; --i) {
+    		sorted = true;
     		for(int j = 0; j < i - 1; ++j) {
     			if (arr[j] < arr[j + 1]) {
     				temp = arr[j];
     				arr[j] = arr[j + 1];
     				arr[j + 1] = temp;
+    				sorted = false;
     			}
+    		}
+    		if(sorted) {
+    			break;
     		}
     	}
     	/*
