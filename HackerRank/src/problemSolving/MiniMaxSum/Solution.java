@@ -37,7 +37,7 @@ public class Solution {
     	}
     	/*
     	 * use the sorted array to add up the sum
-    	 * in the ascending sorted array the first 
+    	 * in the descending sorted array the first 
     	 * four entries are sumMax and the last four
     	 * entries are sumMin
     	 */
