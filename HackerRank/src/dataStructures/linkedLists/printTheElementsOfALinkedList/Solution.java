@@ -37,19 +37,19 @@ public class Solution {
         }
     }
 
-    // Complete the printLinkedList function below.
-
     /*
-     * For your reference:
-     *
-     * SinglyLinkedListNode {
-     *     int data;
-     *     SinglyLinkedListNode next;
-     * }
-     *
+     * Does not work with mySimplyLinkedList but with the HackerRank
+     * interpretation.
+     * 
+     * TODO: Make it work with mySimlpyLinkedList
      */
     static void printLinkedList(SinglyLinkedListNode head) {
-    	// TODO
+    	SinglyLinkedListNode curr = head;
+    	System.out.println(curr.data);
+    	while(curr.next != null) {
+    		System.out.println(curr.next.data);
+    		curr = curr.next;
+    	}
 
     }
 
