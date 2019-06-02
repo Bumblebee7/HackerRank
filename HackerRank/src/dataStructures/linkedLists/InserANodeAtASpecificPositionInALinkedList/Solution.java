@@ -8,6 +8,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
+import javax.crypto.spec.PSource;
+
 public class Solution {
 
     static class SinglyLinkedListNode {
@@ -55,100 +57,33 @@ public class Solution {
     }
 
 // Complete the insertNodeAtPosition function below.
-    
+
     /*
-     * solution without verifying any given data
+     * For your reference:
+     *
+     * SinglyLinkedListNode {
+     *     int data;
+     *     SinglyLinkedListNode next;
+     * }
+     *
      */
     static SinglyLinkedListNode insertNodeAtPosition(SinglyLinkedListNode head, int data, int position) {
-    	/*
-    	 * first get size of the linked list --> should be a method of linked list in a real world application
-    	 */
-    	int size = 0;
-    	if(head != null) {
-    		SinglyLinkedListNode currNode = head;
-    		size = 1;
-    		while(currNode.next != null) {
-    			currNode = currNode.next;
-    			size++;
-    		}
-    	}
+    	SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
     	
-    	/*
-    	 * check if the provided list is not to short
-    	 */
-    	if(size < position) {
-    		throw new IllegalArgumentException("The list is to short!");
+    	if(head == null) {
+    		head = newNode;
     	}
     	else {
-    		/*
-    		 * Case 1: The list is empty
-    		 */
-    		if(size == 0) {
-    			System.out.println("Case 1");
-    			head = new SinglyLinkedListNode(data);
+    		SinglyLinkedListNode currNode = head, prevNode = null;
+    		int currPosition = 1;
+    		while(currNode.next != null && position >= currPosition) {
+    			currPosition++;
+    			prevNode = currNode;
+    			currNode = currNode.next;
     		}
-    		/*
-    		 * Case 2: The list contains only one node.
-    		 * 	a) add new node as head
-    		 * 	b) add new node as tail
-    		 */
-    		else if(size == 1) {
-    			System.out.println("Case 2");
-    			if(position == 0) {
-    				System.out.println("Option a)");
-    				SinglyLinkedListNode tail = head;
-    				head = new SinglyLinkedListNode(data);
-    				head.next = tail;
-    			}
-    			else {
-    				System.out.println("Option b)");
-    				SinglyLinkedListNode tail = new SinglyLinkedListNode(data);
-    				head.next = tail;    				
-    			}
-    		}
-    		/*
-    		 * Case 3: The list contains two or more nodes
-    		 * 	a) add new node as head
-    		 * 	b) add new node as tail
-    		 *  c) add new node in the middle
-    		 */
-    		else {
-    			System.out.println("Case 3");
-    			if(position == 0) {
-    				System.out.println("Option a)");
-    				SinglyLinkedListNode oldHead = head;
-    				head = new SinglyLinkedListNode(data);
-    				head.next = oldHead;
-    			}
-    			else if(position == size) {
-    				System.out.println("Option b)");
-    				SinglyLinkedListNode currNode = head;
-    				SinglyLinkedListNode prevNode = null;
-    				while(currNode.next != null) {
-    					prevNode = currNode;
-    					currNode = currNode.next;
-    				}
-    				SinglyLinkedListNode tail = new SinglyLinkedListNode(data);
-    				prevNode.next = tail;
-    			}
-    			else {
-    				System.out.println("Option c)");
-    				SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
-    				SinglyLinkedListNode currNode = head;
-    				SinglyLinkedListNode prevNode = null, nextNode = null;
-    				int currPos = 0;
-    				while(currNode.next != null && position < currPos) {
-    					prevNode = currNode;
-    					currNode = currNode.next;
-    					nextNode = currNode.next;
-    					currPos++;
-    				}
-    				prevNode.next = newNode;
-    				newNode.next = nextNode;
-    			}
-    		}
+    		prevNode.next = newNode;
+    		newNode.next = currNode;
     	}
-    	
     	return head;
     }
 
