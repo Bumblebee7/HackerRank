@@ -1,4 +1,4 @@
-package dataStructures.linkedList.InsertANodeAtTheHeadOfALinkedList;
+package dataStructures.linkedLists.InsertANodeAtTheHeadOfALinkedList;
 
 import java.io.*;
 import java.math.*;
