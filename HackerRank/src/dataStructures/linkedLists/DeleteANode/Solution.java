@@ -69,13 +69,18 @@ public class Solution {
      */
     static SinglyLinkedListNode deleteNode(SinglyLinkedListNode head, int position) {
     	SinglyLinkedListNode currNode = head, prevNode = null;
-    	int currPosition = 0;
-    	while(currNode.next != null && position > currPosition) {
-    		currPosition++;
-    		prevNode = currNode;
-    		currNode = currNode.next;
+    	if(position == 0) {
+    		head = head.next;
     	}
-    	prevNode.next = currNode.next;
+    	else {
+    		int currPosition = 0;
+    		while(currNode.next != null && position > currPosition) {
+    			currPosition++;
+    			prevNode = currNode;
+    			currNode = currNode.next;
+    		}
+    		prevNode.next = currNode.next;
+    	}
     	return head;
     }
 
