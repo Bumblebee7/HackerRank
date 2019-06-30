@@ -1,12 +1,7 @@
 package interviewPreparationKit.warmUp.CountingValleys;
 
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 public class Solution {
 
@@ -16,12 +11,12 @@ public class Solution {
      */
     static int countingValleys(int n, String s) {
     	int currLevel = 0, oldLevel = 0, sumOfValleys = 0;
-    	for(int i = 0; i < n; i++) {
+    	for(char currChar : s.toCharArray()) {
     		oldLevel = currLevel;
-    		if(s.substring(i, i+1).equalsIgnoreCase("D")) {
+    		if(currChar == 'D') {
     			currLevel--;
     		}
-    		else if(s.substring(i, i+1).equalsIgnoreCase("U")) {
+    		else if(currChar == 'U') {
                 currLevel++;
                 if(oldLevel < 0 && currLevel == 0) {
                     sumOfValleys++;
